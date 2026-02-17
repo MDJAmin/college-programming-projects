@@ -1,40 +1,211 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-<meta charset="UTF-8">
-<title>سیستم مدیریت مالی</title>
+<!doctype html>
+<html
+  lang="fa"
+  dir="rtl"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>سیستم مدیریت مالی</title>
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://unpkg.com/atropos/atropos.min.css" />
-<script src="https://unpkg.com/atropos/atropos.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="css/home.css"
+    />
+    <!-- Atropos -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/atropos/atropos.min.css"
+    />
+    <script src="https://unpkg.com/atropos/atropos.min.js"></script>
 
-</head>
-<body>
-
-<div class="navbar">
-    <h2>💰 Financial System</h2>
-    <div>
+    <!-- Swiper Slider -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <!-- Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAV -->
+    <div class="navbar">
+      <div>
+        <a href="index.html">خونه</a>
         <a href="manage.html">مدیریت</a>
         <a href="dashboard.html">داشبورد</a>
+      </div>
+      <h1>
+        <img
+          class="logo"
+          src="assets/logo.png"
+          alt="logo"
+        />
+      </h1>
     </div>
-</div>
 
-<div style="display:flex; justify-content:center; margin-top:100px;">
-<div class="atropos">
-<div class="atropos-scale">
-<div class="atropos-rotate">
-<div class="atropos-inner card" data-atropos-offset="5">
-    <h1>سیستم ثبت تراکنش</h1>
-    <p>پیاده سازی با Doubly Linked List</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>مدیریت هوشمند مالی</h1>
+      <p>کنترل درآمد و هزینه با طراحی مدرن و ساختار داده حرفه‌ای</p>
+    </section>
 
-<script>
-new Atropos({ el: '.atropos' });
-</script>
+    <!-- SLIDER -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="assets/img 1.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/img 2.avif" />
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/img 3.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/img 4.avif" />
+        </div>
+      </div>
+    </div>
 
-</body>
+    <!-- SERVICES -->
+    <section class="services">
+      <div class="service-card atropos">
+        <div class="atropos-scale">
+          <div class="atropos-rotate">
+            <div class="atropos-inner service-content">
+              <i class="ri-funds-line"></i>
+              <h3>ثبت تراکنش</h3>
+              <p>افزودن و حذف سریع درآمد و هزینه با ساختار Doubly Linked List</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card atropos">
+        <div class="atropos-scale">
+          <div class="atropos-rotate">
+            <div class="atropos-inner service-content">
+              <i class="ri-line-chart-line"></i>
+              <h3>گزارش گیری</h3>
+              <p>مشاهده مجموع درآمد و هزینه و تحلیل ساده داده‌ها</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card atropos">
+        <div class="atropos-scale">
+          <div class="atropos-rotate">
+            <div class="atropos-inner service-content">
+              <i class="ri-dashboard-3-line"></i>
+              <h3>داشبورد حرفه‌ای</h3>
+              <p>نمایش گرافیکی وضعیت مالی با چارت‌های مدرن</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Info -->
+        <div class="footer-info">
+          <h1>
+            <img
+              class="logo"
+              src="assets/logo.png"
+              alt="logo"
+            />
+          </h1>
+          <p>سیستم مدیریت مالی با ساختار داده Doubly Linked List و طراحی مدرن</p>
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4>دسترسی سریع</h4>
+            <ul>
+              <li><a href="index.html">خانه</a></li>
+              <li><a href="manage.html">مدیریت تراکنش‌ها</a></li>
+              <li><a href="dashboard.html">داشبورد</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-contact-info">
+            <h4>اطلاعات تماس</h4>
+            <p>ایمیل: info@financialsystem.com</p>
+            <p>تلفن: 0912-000-0000</p>
+          </div>
+
+          <!-- Social Media -->
+          <div class="footer-social">
+            <h4>شبکه‌های اجتماعی</h4>
+            <div class="social-icons">
+              <a href="#"><i class="ri-instagram-line"></i></a>
+              <a href="#"><i class="ri-telegram-line"></i></a>
+              <a href="#"><i class="ri-linkedin-box-line"></i></a>
+              <a href="#"><i class="ri-github-line"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="footer-contact">
+          <h3>با ما در ارتباط باشید</h3>
+
+          <form id="contactForm">
+            <div class="inputs">
+              <input
+                type="text"
+                id="name"
+                placeholder="نام شما"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                placeholder="ایمیل شما"
+                required
+              />
+              <textarea
+                id="message"
+                placeholder="پیام شما"
+                required
+              ></textarea>
+            </div>
+            <button type="submit">ارسال پیام</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© 2025 Financial System | All Rights Reserved</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script>
+      new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+      });
+
+      document.querySelectorAll(".atropos").forEach((el) => {
+        new Atropos({
+          el: el,
+          highlight: false,
+          shadow: false,
+        });
+      });
+    </script>
+  </body>
 </html>
