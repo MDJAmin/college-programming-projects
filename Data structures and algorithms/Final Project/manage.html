@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>مدیریت تراکنش</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/linkedList.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="index.html">خانه</a>
+    <a href="dashboard.html">داشبورد</a>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:50px;">
+<div class="card">
+
+<h2>افزودن تراکنش</h2>
+<input id="title" placeholder="عنوان">
+<input id="amount" type="number" placeholder="مبلغ">
+<select id="type">
+    <option value="income">درآمد</option>
+    <option value="expense">هزینه</option>
+</select>
+<button onclick="add()">افزودن</button>
+
+<hr>
+
+<h2>لیست تراکنش‌ها</h2>
+<ul id="list"></ul>
+
+</div>
+</div>
+
+</body>
+</html>
