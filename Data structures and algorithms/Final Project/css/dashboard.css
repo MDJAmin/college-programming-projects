@@ -1,10 +1,10 @@
+/* --- Layout --- */
 .body {
-  margin: auto;
-  margin-top: 100px;
-}
-
-#chart {
-  scale: 0.8;
+  margin: 160px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card {
@@ -15,23 +15,28 @@
 
 .summary {
   display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  margin: 30px 0;
   flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0;
 }
 
+/* --- Summary Cards --- */
 .summary-card {
   flex: 1;
-  margin: 0 200px;
   min-width: 300px;
+  max-width: 400px;
   padding: 20px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   text-align: center;
-  transition: 0.3s ease;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
 .summary-card p {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 8px;
@@ -41,6 +46,8 @@
   font-size: 22px;
   font-weight: bold;
 }
+
+/* Colors */
 .summary-card.income h3 {
   color: #00f5c4;
 }
@@ -53,11 +60,42 @@
   color: #5b8cff;
 }
 
-.summary-atropos {
-  width: 100%;
+/* Hover effect: move up slightly */
+.summary-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.summary-card {
-  cursor: pointer;
-  transition: 0.3s ease;
+/* --- Chart --- */
+#chart {
+  max-width: 600px;
+  max-height: 600px;
+  margin-top: 20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1285px) {
+  .summary-card {
+    max-width: 300px;
+  }
+  #chart {
+    max-width: 400px;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .body {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 650px) {
+  .summary-card {
+    max-width: 300px;
+  }
+  .summary {
+    width: 300px;
+    flex-direction: column;
+  }
 }
