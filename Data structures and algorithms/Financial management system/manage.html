@@ -191,7 +191,7 @@
       const amountInput = document.querySelector("#amount");
 
       amountInput.addEventListener("input", function (e) {
-        let value = e.target.value.replace(/,/g, ""); // حذف کاماهای قبلی
+        let value = e.target.value.replace(/,/g, "");
 
         if (isNaN(value)) {
           value = value.replace(/[^\d]/g, "");

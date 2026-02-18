@@ -171,19 +171,16 @@
   z-index: 2;
 }
 
-/* Hover */
 .tab-btn:hover {
   background: transparent !important;
   color: white !important;
 }
 
-/* Active Tab */
 .tab-btn.active {
   color: black;
   font-weight: bold;
 }
 
-/* Active Background Sliding Effect */
 .tabs::before {
   content: "";
   position: absolute;
@@ -196,7 +193,6 @@
   z-index: 1;
 }
 
-/* Move background when expense active */
 .tabs.expense-active::before {
   transform: translateX(-115%);
 }
