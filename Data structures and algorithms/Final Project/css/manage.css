@@ -21,15 +21,6 @@
   box-shadow: 0 15px 40px rgba(0, 245, 196, 0.3);
 }
 
-.inputs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  padding: 0 0 0 8px;
-}
-
 .card h2 {
   color: #00f5c4;
   margin-bottom: 20px;
