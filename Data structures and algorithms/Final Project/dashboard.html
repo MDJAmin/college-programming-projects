@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>داشبورد</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/linkedList.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="index.html">خانه</a>
+    <a href="manage.html">مدیریت</a>
+</div>
+
+<div style="width:70%; margin:auto; margin-top:50px;">
+<div class="card">
+<h2>مجموع موجودی</h2>
+<h1 id="total"></h1>
+<canvas id="chart"></canvas>
+</div>
+</div>
+
+<script>
+window.onload = function(){
+    document.getElementById("total").innerText =
+        transactionList.getTotal();
+
+    const ctx = document.getElementById('chart');
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Income','Expense'],
+            datasets: [{
+                data: [500,300],
+                backgroundColor: ['#00f5c4','#ff3e6c']
+            }]
+        }
+    });
+}
+</script>
+
+</body>
+</html>
