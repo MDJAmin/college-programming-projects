@@ -1,46 +1,144 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-<meta charset="UTF-8">
-<title>داشبورد</title>
-<link rel="stylesheet" href="css/style.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="js/linkedList.js"></script>
-<script src="js/app.js" defer></script>
-</head>
-<body>
+<!doctype html>
+<html
+  lang="fa"
+  dir="rtl"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>داشبورد</title>
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAV -->
+    <div class="navbar">
+      <div>
+        <a href="index.html">خونه</a>
+        <a href="manage.html">مدیریت</a>
+        <a href="dashboard.html">داشبورد</a>
+      </div>
+      <h1>
+        <img
+          class="logo"
+          src="assets/logo.png"
+          alt="logo"
+        />
+      </h1>
+    </div>
 
-<div class="navbar">
-    <a href="index.html">خانه</a>
-    <a href="manage.html">مدیریت</a>
-</div>
+    <div style="width: 70%; margin: auto; margin-top: 50px">
+      <div class="card">
+        <h2>مجموع موجودی</h2>
+        <h1 id="total"></h1>
+        <canvas id="chart"></canvas>
+      </div>
+    </div>
 
-<div style="width:70%; margin:auto; margin-top:50px;">
-<div class="card">
-<h2>مجموع موجودی</h2>
-<h1 id="total"></h1>
-<canvas id="chart"></canvas>
-</div>
-</div>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Info -->
+        <div class="footer-info">
+          <h1>
+            <img
+              class="logo"
+              src="assets/logo.png"
+              alt="logo"
+            />
+          </h1>
+          <p>سیستم مدیریت مالی با ساختار داده Doubly Linked List و طراحی مدرن</p>
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4>دسترسی سریع</h4>
+            <ul>
+              <li><a href="index.html">خانه</a></li>
+              <li><a href="manage.html">مدیریت تراکنش‌ها</a></li>
+              <li><a href="dashboard.html">داشبورد</a></li>
+            </ul>
+          </div>
 
-<script>
-window.onload = function(){
-    document.getElementById("total").innerText =
-        transactionList.getTotal();
+          <!-- Contact Info -->
+          <div class="footer-contact-info">
+            <h4>اطلاعات تماس</h4>
+            <p>ایمیل: info@financialsystem.com</p>
+            <p>تلفن: 0912-000-0000</p>
+          </div>
 
-    const ctx = document.getElementById('chart');
-    new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Income','Expense'],
-            datasets: [{
-                data: [500,300],
-                backgroundColor: ['#00f5c4','#ff3e6c']
-            }]
-        }
-    });
-}
-</script>
+          <!-- Social Media -->
+          <div class="footer-social">
+            <h4>شبکه‌های اجتماعی</h4>
+            <div class="social-icons">
+              <a href="#"><i class="ri-instagram-line"></i></a>
+              <a href="#"><i class="ri-telegram-line"></i></a>
+              <a href="#"><i class="ri-linkedin-box-line"></i></a>
+              <a href="#"><i class="ri-github-line"></i></a>
+            </div>
+          </div>
+        </div>
 
-</body>
+        <!-- Contact Form -->
+        <div class="footer-contact">
+          <h3>با ما در ارتباط باشید</h3>
+
+          <form id="contactForm">
+            <div class="contact-inputs">
+              <input
+                type="text"
+                id="name"
+                placeholder="نام شما"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                placeholder="ایمیل شما"
+                required
+              />
+              <textarea
+                id="message"
+                placeholder="پیام شما"
+                required
+              ></textarea>
+            </div>
+            <button type="submit">ارسال پیام</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© 2025 Financial System | All Rights Reserved</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/linkedList.js"></script>
+    <script
+      src="js/app.js"
+      defer
+    ></script>
+
+    <script>
+      window.onload = function () {
+        document.getElementById("total").innerText = transactionList.getTotal();
+
+        const ctx = document.getElementById("chart");
+        new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: ["Income", "Expense"],
+            datasets: [
+              {
+                data: [500, 300],
+                backgroundColor: ["#00f5c4", "#ff3e6c"],
+              },
+            ],
+          },
+        });
+      };
+    </script>
+  </body>
 </html>
