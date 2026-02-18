@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="css/style.css"
     />
+    <link rel="stylesheet" href="css/dashboard.css">
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
       rel="stylesheet"
@@ -32,13 +33,13 @@
       </h1>
     </div>
 
-    <div style="width: 70%; margin: auto; margin-top: 50px">
+    <section class="body">
       <div class="card">
         <h2>مجموع موجودی</h2>
         <h1 id="total"></h1>
         <canvas id="chart"></canvas>
       </div>
-    </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -125,7 +126,7 @@
       window.onload = function () {
         document.getElementById("total").innerText = transactionList.getTotal();
 
-        const ctx = document.getElementById("chart");
+        const ctx = document.querySelector("#chart");
         new Chart(ctx, {
           type: "doughnut",
           data: {
