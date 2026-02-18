@@ -1,4 +1,7 @@
-// Auto Active Navbar Link
+/* =========================
+   NAV ACTIVE LINK
+========================= */
+
 const currentPage = window.location.pathname.split("/").pop();
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
@@ -7,21 +10,37 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   }
 });
 
+/* =========================
+   INITIALIZATION
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadFromLocalStorage();
+  render();
+  setupContactForm();
+});
+
+/* =========================
+   LOCAL STORAGE
+========================= */
+
 function loadFromLocalStorage() {
   const data = JSON.parse(localStorage.getItem("transactions")) || [];
   transactionList.loadFromArray(data);
 }
 
-loadFromLocalStorage();
+function saveToLocalStorage() {
+  localStorage.setItem("transactions", JSON.stringify(transactionList.toArray()));
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-  render();
-});
+/* =========================
+   TRANSACTION ACTIONS
+========================= */
 
 function add() {
-  const titleInput = document.getElementById("title");
-  const amountInput = document.getElementById("amount");
-  const typeSelect = document.getElementById("type");
+  const titleInput = document.querySelector("#title");
+  const amountInput = document.querySelector("#amount");
+  const typeSelect = document.querySelector("#type");
 
   const title = titleInput.value.trim();
   const amount = amountInput.value.replace(/,/g, "");
@@ -32,9 +51,9 @@ function add() {
   transactionList.addTransaction(title, Number(amount), type);
 
   saveToLocalStorage();
-
   render();
 
+  // Reset form
   titleInput.value = "";
   amountInput.value = "";
   typeSelect.value = "income";
@@ -43,35 +62,37 @@ function add() {
 
 function remove(id) {
   transactionList.deleteTransaction(id);
-
   saveToLocalStorage();
   render();
 }
 
+/* =========================
+   TABS
+========================= */
+
 let currentTab = "income";
 
-function switchTab(type) {
+function switchTab(type, element) {
   currentTab = type;
 
   document.querySelectorAll(".tab-btn").forEach((btn) => {
     btn.classList.remove("active");
   });
 
-  event.target.classList.add("active");
+  element.classList.add("active");
 
   const tabsContainer = document.querySelector(".tabs");
-
-  if (type === "expense") {
-    tabsContainer.classList.add("expense-active");
-  } else {
-    tabsContainer.classList.remove("expense-active");
-  }
+  tabsContainer.classList.toggle("expense-active", type === "expense");
 
   render();
 }
 
+/* =========================
+   RENDER
+========================= */
+
 function render() {
-  const list = document.getElementById("list");
+  const list = document.querySelector("#list");
   list.innerHTML = "";
 
   transactionList.getAll().forEach((t) => {
@@ -79,32 +100,37 @@ function render() {
 
     const formattedAmount = Number(t.amount).toLocaleString();
 
-    list.innerHTML += `
-            <li>
-                <span>${t.title} - ${formattedAmount}</span>
-                <button onclick="remove(${t.id})">×</button>
-            </li>
-        `;
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <span>${t.title} - ${formattedAmount}</span>
+      <button onclick="remove(${t.id})">×</button>
+    `;
+
+    list.appendChild(li);
   });
 }
 
-function saveToLocalStorage() {
-  localStorage.setItem("transactions", JSON.stringify(transactionList.toArray()));
+/* =========================
+   CONTACT FORM
+========================= */
+
+function setupContactForm() {
+  const form = document.querySelector("#contactForm");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.querySelector("#name").value;
+    const email = document.querySelector("#email").value;
+    const message = document.querySelector("#message").value;
+
+    console.log("📩 New Contact Message:");
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
+
+    alert("پیام شما با موفقیت ثبت شد ✅");
+
+    form.reset();
+  });
 }
-
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  console.log("📩 New Contact Message:");
-  console.log("Name:", name);
-  console.log("Email:", email);
-  console.log("Message:", message);
-
-  alert("پیام شما با موفقیت ثبت شد ✅");
-
-  this.reset();
-});

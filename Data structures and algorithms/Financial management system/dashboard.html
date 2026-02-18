@@ -189,14 +189,12 @@
 
         const total = income - expense;
 
-        document.getElementById("incomeTotal").innerText = income.toLocaleString() + " تومان";
+        document.querySelector("#incomeTotal").innerText = income.toLocaleString() + " تومان";
 
-        document.getElementById("expenseTotal").innerText =
+        document.querySelector("#expenseTotal").innerText =
           expense.toLocaleString() + " تومان";
 
-        document.getElementById("total").innerText = total.toLocaleString() + " تومان";
-
-        document.getElementById("total").innerText = total.toLocaleString() + " تومان";
+        document.querySelector("#total").innerText = total.toLocaleString() + " تومان";
 
         const ctx = document.querySelector("#chart");
 
@@ -222,17 +220,6 @@
           },
         });
       };
-    </script>
-    <script>
-      document.querySelectorAll(".summary-atropos").forEach((el) => {
-        Atropos({
-          el: el,
-          highlight: false,
-          shadow: false,
-          rotateXMax: 10,
-          rotateYMax: 10,
-        });
-      });
     </script>
   </body>
 </html>

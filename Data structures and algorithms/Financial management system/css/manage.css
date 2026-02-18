@@ -80,13 +80,14 @@
 }
 
 .card button.add {
+  font-family: inherit;
   width: 100%;
   padding: 12px;
   border-radius: 10px;
   border: none;
-  font-weight: bold;
+  font-weight: bolder;
   background: linear-gradient(90deg, #00f5c4, #5b8cff);
-  color: black;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   transition: 0.3s;
 }
@@ -162,23 +163,24 @@
   padding: 10px 0;
   border: none;
   background: transparent !important;
-  color: rgba(0, 0, 0, 0.6) !important;
+  font-family: inherit;
+  color: rgba(221, 221, 221, 0.696) !important;
   cursor: pointer;
   border-radius: 10px;
-  font-weight: 500;
+  font-weight: bolder !important;
   transition: 0.3s ease;
+  font-weight: 400;
   position: relative;
   z-index: 2;
 }
 
 .tab-btn:hover {
-  background: transparent !important;
   color: white !important;
+  background: transparent !important;
 }
 
 .tab-btn.active {
-  color: black;
-  font-weight: bold;
+  color: rgb(255, 255, 255) !important;
 }
 
 .tabs::before {

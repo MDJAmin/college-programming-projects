@@ -217,13 +217,14 @@ body {
 }
 
 .footer-contact button {
+  font-family: inherit;
   width: 100%;
   padding: 12px;
   border-radius: 10px;
   border: none;
   background: linear-gradient(90deg, #00f5c4, #5b8cff);
-  color: black;
-  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -235,7 +236,7 @@ body {
 }
 
 .footer-contact button:hover {
-  transform: scale(1.05);
+   transform: translateY(-3px);
 }
 
 .footer-bottom {
