@@ -1,5 +1,4 @@
 .body {
-  width: 70%;
   margin: auto;
   margin-top: 100px;
 }
@@ -8,17 +7,24 @@
   scale: 0.8;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .summary {
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin: 30px 0;
   flex-wrap: wrap;
 }
 
 .summary-card {
   flex: 1;
-  min-width: 200px;
+  margin: 0 200px;
+  min-width: 300px;
   padding: 20px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.05);
@@ -26,7 +32,6 @@
   text-align: center;
   transition: 0.3s ease;
 }
-
 .summary-card p {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 8px;
@@ -48,6 +53,11 @@
   color: #5b8cff;
 }
 
-.summary-card:hover {
-  transform: translateY(-5px);
+.summary-atropos {
+  width: 100%;
+}
+
+.summary-card {
+  cursor: pointer;
+  transition: 0.3s ease;
 }

@@ -18,6 +18,10 @@
       href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/atropos@2/atropos.min.css"
+    />
   </head>
   <body>
     <!-- NAV -->
@@ -39,26 +43,57 @@
     <section class="body">
       <div class="card">
         <h2>گزارش مالی</h2>
-
         <div class="summary">
-          <div class="summary-card income">
-            <p>مجموع درآمد</p>
-            <h3 id="incomeTotal"></h3>
+          <div class="atropos summary-atropos">
+            <div class="atropos-scale">
+              <div class="atropos-rotate">
+                <div class="atropos-inner">
+                  <div
+                    class="summary-card income"
+                    data-atropos-offset="5"
+                  >
+                    <p>مجموع درآمد</p>
+                    <h3 id="incomeTotal"></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="summary-card expense">
-            <p>مجموع هزینه</p>
-            <h3 id="expenseTotal"></h3>
+          <div class="atropos summary-atropos">
+            <div class="atropos-scale">
+              <div class="atropos-rotate">
+                <div class="atropos-inner">
+                  <div
+                    class="summary-card expense"
+                    data-atropos-offset="5"
+                  >
+                    <p>مجموع هزینه</p>
+                    <h3 id="expenseTotal"></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="summary-card balance">
-            <p>موجودی کل</p>
-            <h3 id="total"></h3>
+          <div class="atropos summary-atropos">
+            <div class="atropos-scale">
+              <div class="atropos-rotate">
+                <div class="atropos-inner">
+                  <div
+                    class="summary-card balance"
+                    data-atropos-offset="5"
+                  >
+                    <p>موجودی کل</p>
+                    <h3 id="total"></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <canvas id="chart"></canvas>
       </div>
+      <canvas id="chart"></canvas>
     </section>
 
     <!-- FOOTER -->
@@ -136,6 +171,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/atropos@2/atropos.min.js"></script>
+
     <script src="js/linkedList.js"></script>
     <script
       src="js/app.js"
@@ -192,6 +229,17 @@
           },
         });
       };
+    </script>
+    <script>
+      document.querySelectorAll(".summary-atropos").forEach((el) => {
+        Atropos({
+          el: el,
+          highlight: false,
+          shadow: false,
+          rotateXMax: 10,
+          rotateYMax: 10,
+        });
+      });
     </script>
   </body>
 </html>
