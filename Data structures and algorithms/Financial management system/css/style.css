@@ -162,11 +162,10 @@ body {
 }
 
 @media (max-width: 650px) {
-.footer-info p {
-font-size: 1.1em;
+  .footer-info p {
+    font-size: 1.1em;
+  }
 }
-}
-
 
 .footer-contact {
   background: rgba(255, 255, 255, 0.05);
