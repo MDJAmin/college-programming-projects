@@ -21,8 +21,8 @@
   </head>
   <body>
     <!-- NAV -->
-    <div class="navbar">
-      <div>
+    <nav class="navbar">
+      <div class="nav-links">
         <a href="index.html">خونه</a>
         <a href="manage.html">مدیریت</a>
         <a href="dashboard.html">داشبورد</a>
@@ -34,9 +34,9 @@
           alt="logo"
         />
       </h1>
-    </div>
+    </nav>
 
-    <div style="display: flex; justify-content: center; margin-top: 50px">
+    <div class="body">
       <div class="card">
         <h2>افزودن تراکنش</h2>
         <div class="inputs">
@@ -46,7 +46,7 @@
           />
           <input
             id="amount"
-            type="number"
+            type="text"
             placeholder="مبلغ"
           />
         </div>
@@ -54,11 +54,31 @@
           <option value="income">درآمد</option>
           <option value="expense">هزینه</option>
         </select>
-        <button onclick="add()">افزودن</button>
+        <button
+          class="add"
+          onclick="add()"
+        >
+          افزودن
+        </button>
 
         <hr />
-
         <h2>لیست تراکنش‌ها</h2>
+
+        <div class="tabs">
+          <button
+            class="tab-btn active"
+            onclick="switchTab('income')"
+          >
+            درآمدها
+          </button>
+          <button
+            class="tab-btn"
+            onclick="switchTab('expense')"
+          >
+            هزینه‌ها
+          </button>
+        </div>
+
         <ul id="list"></ul>
       </div>
     </div>
@@ -141,5 +161,24 @@
       src="js/app.js"
       defer
     ></script>
+
+    <script>
+      const amountInput = document.querySelector("#amount");
+
+      amountInput.addEventListener("input", function (e) {
+        let value = e.target.value.replace(/,/g, ""); // حذف کاماهای قبلی
+
+        if (isNaN(value)) {
+          value = value.replace(/[^\d]/g, "");
+        }
+
+        if (value === "") {
+          e.target.value = "";
+          return;
+        }
+
+        e.target.value = Number(value).toLocaleString("en-US");
+      });
+    </script>
   </body>
 </html>

@@ -1,143 +1,210 @@
+.body {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
 /* CARD FORM */
 .card {
-    margin-top: 80px;
-    width: 400px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(20px) saturate(180%);
-    border-radius: 20px;
-    padding: 30px 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    transition: 0.3s;
+  margin-top: 80px;
+  width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,245,196,0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 245, 196, 0.3);
 }
 
-.inputs{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    padding: 0 0 0 8px;
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  padding: 0 0 0 8px;
 }
 
 .card h2 {
-    color: #00f5c4;
-    margin-bottom: 20px;
-    text-align: center;
+  color: #00f5c4;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.card input{
-    width: 100%;
-    padding: 12px 8px 12px 0;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    border: none;
-    background: rgba(255,255,255,0.08);
-    color: white;
-    font-size: 14px;
-    outline: none;
-    transition: 0.3s;
+.card input {
+  width: 100%;
+  padding: 12px 8px 12px 0;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
 }
 
 /* STYLE MODERN SELECT */
 .card select {
-    width: 100%;
-    margin-bottom: 16px;
-    padding: 12px 15px;
-    border-radius: 10px;
-    border: none;
-    background: rgba(255,255,255,0.08);
-    color: white;
-    font-size: 14px;
-    outline: none;
-    appearance: none; /* حذف استایل پیش‌فرض مرورگر */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-    transition: 0.3s;
-    position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
 }
 
 /* Focus Effect */
 .card select:focus {
-    background: rgba(0,245,196,0.1);
-    box-shadow: 0 0 10px rgba(0,245,196,0.5);
+  background: rgba(0, 245, 196, 0.1);
+  box-shadow: 0 0 10px rgba(0, 245, 196, 0.5);
 }
 
-/* Option styling (works in modern browsers like Chrome & Edge) */
+/* Option styling */
 .card select option {
-    background: rgba(15,15,24,0.95);
-    color: white;
-    padding: 10px;
+  background: rgba(15, 15, 24, 0.95);
+  color: white;
+  padding: 10px;
 }
-
 
 .card input:focus,
 .card select:focus {
-    background: rgba(0,245,196,0.1);
-    box-shadow: 0 0 10px rgba(0,245,196,0.5);
+  background: rgba(0, 245, 196, 0.1);
+  box-shadow: 0 0 10px rgba(0, 245, 196, 0.5);
 }
 
-.card button {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    font-weight: bold;
-    background: linear-gradient(90deg, #00f5c4, #5b8cff);
-    color: black;
-    cursor: pointer;
-    transition: 0.3s;
+.card button.add {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00f5c4, #5b8cff);
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.card button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,245,196,0.4);
+.card button.add:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 245, 196, 0.4);
+}
+
+.card button.add:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 245, 196, 0.2);
 }
 
 .card hr {
-    border: none;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    margin: 25px 0;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 25px 0;
 }
 
 .card ul {
-    list-style: none;
-    padding: 0;
-    max-height: 250px;
-    overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  max-height: 250px;
+  overflow-y: auto;
 }
 
 .card ul li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255,255,255,0.05);
-    padding: 10px 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    transition: 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s;
 }
 
 .card ul li:hover {
-    background: rgba(0,245,196,0.1);
+  background: rgba(0, 245, 196, 0.1);
 }
 
 .card ul li button {
-    background: #ff3e6c;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-size: 12px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
+  background: #ff3e6c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .card ul li button:hover {
-    background: #ff1a4d;
+  background: #ff1a4d;
+}
+
+/* TABS CONTAINER */
+.tabs {
+  display: flex;
+  gap: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px;
+  border-radius: 14px;
+  position: relative;
+  margin-bottom: 20px;
+  backdrop-filter: blur(15px);
+}
+
+/* TAB BUTTON */
+.tab-btn {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  background: transparent !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover */
+.tab-btn:hover {
+  background: transparent !important;
+  color: white !important;
+}
+
+/* Active Tab */
+.tab-btn.active {
+  color: black;
+  font-weight: bold;
+}
+
+/* Active Background Sliding Effect */
+.tabs::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  width: 45%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00f5c4, #5b8cff);
+  transition: 0.3s ease;
+  z-index: 1;
+}
+
+/* Move background when expense active */
+.tabs.expense-active::before {
+  transform: translateX(-115%);
 }
