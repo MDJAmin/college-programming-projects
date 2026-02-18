@@ -93,6 +93,9 @@ function switchTab(type, element) {
 
 function render() {
   const list = document.querySelector("#list");
+
+  if (!list) return;
+
   list.innerHTML = "";
 
   transactionList.getAll().forEach((t) => {
