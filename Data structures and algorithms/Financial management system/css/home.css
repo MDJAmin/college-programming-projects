@@ -1,8 +1,11 @@
+body {
+  background: radial-gradient(circle at top, #1f1f3a, #0f0f18);
+}
+
 /* HERO */
 .hero {
   text-align: center;
-  padding: 120px 20px;
-  background: radial-gradient(circle at top, #1f1f3a, #0f0f18);
+  padding: 120px 20px 0 20px;
 }
 
 .hero h1 {
@@ -27,6 +30,7 @@
 .swiper {
   width: 85%;
   margin: 80px auto;
+  margin-top: 24px;
   border-radius: 20px;
 }
 
@@ -47,6 +51,7 @@
 }
 
 .service-card {
+    cursor: move;
   width: 400px;
 }
 

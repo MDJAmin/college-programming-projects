@@ -6,6 +6,7 @@
 
 /* CARD FORM */
 .card {
+  margin: 0 8px;
   margin-top: 80px;
   width: 400px;
   background: rgba(255, 255, 255, 0.05);
