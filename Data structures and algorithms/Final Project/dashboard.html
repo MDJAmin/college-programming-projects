@@ -10,7 +10,10 @@
       rel="stylesheet"
       href="css/style.css"
     />
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link
+      rel="stylesheet"
+      href="css/dashboard.css"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
       rel="stylesheet"
@@ -18,8 +21,8 @@
   </head>
   <body>
     <!-- NAV -->
-    <div class="navbar">
-      <div>
+    <nav class="navbar">
+      <div class="nav-links">
         <a href="index.html">خونه</a>
         <a href="manage.html">مدیریت</a>
         <a href="dashboard.html">داشبورد</a>
@@ -31,12 +34,29 @@
           alt="logo"
         />
       </h1>
-    </div>
+    </nav>
 
     <section class="body">
       <div class="card">
-        <h2>مجموع موجودی</h2>
-        <h1 id="total"></h1>
+        <h2>گزارش مالی</h2>
+
+        <div class="summary">
+          <div class="summary-card income">
+            <p>مجموع درآمد</p>
+            <h3 id="incomeTotal"></h3>
+          </div>
+
+          <div class="summary-card expense">
+            <p>مجموع هزینه</p>
+            <h3 id="expenseTotal"></h3>
+          </div>
+
+          <div class="summary-card balance">
+            <p>موجودی کل</p>
+            <h3 id="total"></h3>
+          </div>
+        </div>
+
         <canvas id="chart"></canvas>
       </div>
     </section>
@@ -124,19 +144,51 @@
 
     <script>
       window.onload = function () {
-        document.getElementById("total").innerText = transactionList.getTotal();
+        const data = JSON.parse(localStorage.getItem("transactions")) || [];
+
+        let income = 0;
+        let expense = 0;
+
+        data.forEach((t) => {
+          if (t.type === "income") {
+            income += Number(t.amount);
+          } else {
+            expense += Number(t.amount);
+          }
+        });
+
+        const total = income - expense;
+
+        document.getElementById("incomeTotal").innerText = income.toLocaleString() + " تومان";
+
+        document.getElementById("expenseTotal").innerText =
+          expense.toLocaleString() + " تومان";
+
+        document.getElementById("total").innerText = total.toLocaleString() + " تومان";
+
+        document.getElementById("total").innerText = total.toLocaleString() + " تومان";
 
         const ctx = document.querySelector("#chart");
+
         new Chart(ctx, {
           type: "doughnut",
           data: {
             labels: ["Income", "Expense"],
             datasets: [
               {
-                data: [500, 300],
+                data: [income, expense],
                 backgroundColor: ["#00f5c4", "#ff3e6c"],
               },
             ],
+          },
+          options: {
+            plugins: {
+              legend: {
+                labels: {
+                  color: "white",
+                },
+              },
+            },
           },
         });
       };

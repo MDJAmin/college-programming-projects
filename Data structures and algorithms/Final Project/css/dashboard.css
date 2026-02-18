@@ -4,7 +4,50 @@
   margin-top: 100px;
 }
 
+#chart {
+  scale: 0.8;
+}
 
-#chart{
-    scale: 0.8;
+.summary {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.summary-card p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+}
+
+.summary-card h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+.summary-card.income h3 {
+  color: #00f5c4;
+}
+
+.summary-card.expense h3 {
+  color: #ff3e6c;
+}
+
+.summary-card.balance h3 {
+  color: #5b8cff;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
 }
