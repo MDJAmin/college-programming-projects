@@ -16,6 +16,21 @@ class DoublyLinkedList {
     this.size = 0;
   }
 
+  toArray() {
+    return this.getAll().map((t) => ({
+      id: t.id,
+      title: t.title,
+      amount: t.amount,
+      type: t.type,
+    }));
+  }
+
+  loadFromArray(dataArray) {
+    dataArray.forEach((item) => {
+      this.addTransaction(item.title, item.amount, item.type);
+    });
+  }
+
   addTransaction(title, amount, type) {
     const node = new TransactionNode(Date.now(), title, amount, type);
 
