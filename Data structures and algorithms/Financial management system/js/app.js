@@ -82,7 +82,7 @@ function render() {
     list.innerHTML += `
             <li>
                 <span>${t.title} - ${formattedAmount}</span>
-                <button onclick="remove(${t.id})">❌</button>
+                <button onclick="remove(${t.id})">×</button>
             </li>
         `;
   });
